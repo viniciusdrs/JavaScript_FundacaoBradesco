@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> js04_switchCase - Selecao Multipla</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="utf-8"/>
+	</head>
+	
+	<body>
+		
+		<!-- Linha de comentario HTML: Definicao do elemento formulario para Entrada de Dados HTML -->
+		<form name="formcalend" action="" method="post">
+			Digite o m&ecirc;s (01 a 12): <input type="text" name="f_mes" size="4" maxlength="2"/><p></p>
+			<input type="button" name="btn_processar" value="Processar" onClick="verificames()"/>
+			<input type="reset" name="btn_cancelar" value="Cancelar" /><p></p>
+		
+			O M&ecirc;s correspondente &eacute; : <input type="text" name="f_nomemes" size="18" maxlength="15" />
+		</form>
+		
+		
+		<!-- Linha de comentario HTML: Início da estruturação JavaScript -->
+		<script language="JavaScript">
+		<!--
+		/*  Linha de comentario JavaScript:
+			Objetivo: Utilizando o recurso de Seleção Múltipla - switch...case, pesquisar o nome do mês de referência 
+			atraves do respectivo número de mês informado.
+			-	Objetivo/Métodos utilizados:
+			Entrada: document.form (entrada de dados via formulario)
+			Saída: document.form (Saída de dados via formulario)
+			-  Importante:
+				Os campos dos formulario serão identificados  com o prefixo f_ = Exemplo: f_mes.
+				Os campos do Java Script serão identificados com o prefixo js_ = Exemplo: js_mes. 
+		*/
+		
+			/*Definição das Variaveis */
+			var js_mes;
+			
+			/* Início da função verificames() para capturar dos dados do formulario e pesquisa por Seleção Múltipla */
+			function verificames() {
+			
+			/* Captura do valor do mês ao formulario f_mes e tranferencia/atribuição para variavel do JavaScript js_mes */
+			js_mes = parseInt(document:formcalend.f_mes.value);
+			
+			/* Início da estrutura da Seleção switch...case */
+			switch(js_mes){
+				case 1 : document.formcalend.f_nomemes.value = 'Janeiro'; break;
+				case 2 : document.formcalend.f_nomemes.value = 'Fevereiro'; break;
+				case 3 : document.formcalend.f_nomemes.value = 'Março'; break;
+				case 4 : document.formcalend.f_nomemes.value = 'Abril'; break;
+				case 5 : document.formcalend.f_nomemes.value = 'Maio'; break;
+				case 6 : document.formcalend.f_nomemes.value = 'Junho'; break;
+				case 7 : document.formcalend.f_nomemes.value = 'Julho'; break;
+				case 8 : document.formcalend.f_nomemes.value = 'Agosto'; break;
+				case 9 : document.formcalend.f_nomemes.value = 'Setembro'; break;
+				case 10 : document.formcalend.f_nomemes.value = 'Outubro'; break;
+				case 11 : document.formcalend.f_nomemes.value = 'Novembro'; break;
+				case 12 : document.formcalend.f_nomemes.value = 'Dezembro'; break;
+			default : document.formcalend.f_nomemes.value = 'M\u00eas Inv\u00e1lido **'; break;
+			}
+			/* Final da estrutura de Seleção Múltipla switch...case */
+			
+			}
+			/* Final da função verificames() para captura dos dados do formulario e pesquisa por Seleção Múltipla */
+			
+		//-->
+			
+		</script>
+	</body>
+</html>	
